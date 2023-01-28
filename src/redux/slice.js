@@ -1,9 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { dataInitialList } from '../components/InitialConst/InitialConst';
 
 export const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: dataInitialList,
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
+  },
   reducers: {
     add: (state, action) => [...state, action.payload],
     delet: (state, action) =>

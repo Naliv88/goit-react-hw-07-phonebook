@@ -8,22 +8,17 @@ export const contactsSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  // reducers: {
-  //   add: (state, action) => [...state, action.payload],
-  //   delet: (state, action) =>
-  //     state.filter(contact => contact.id !== action.payload),
-  // },
   extraReducers: {
     [fetchContacts.pending]: state => {
       state.isLoading = true;
       state.error = null;
     },
-    [fetchContacts.fulfilled]: (state, {payload}) => {
+    [fetchContacts.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.error = null;
       state.items = payload;
     },
-    [fetchContacts.rejected]: (state, {payload}) => {
+    [fetchContacts.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
     },
@@ -31,12 +26,12 @@ export const contactsSlice = createSlice({
       state.isLoading = true;
       state.error = null;
     },
-    [addContact.fulfilled]: (state, {payload}) => {
+    [addContact.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.error = null;
       state.items.push(payload);
     },
-    [addContact.rejected]: (state, {payload}) => {
+    [addContact.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
     },
@@ -44,21 +39,20 @@ export const contactsSlice = createSlice({
       state.isLoading = true;
       state.error = null;
     },
-    [deleteContact.fulfilled]: (state, {payload}) => {
+    [deleteContact.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.error = null;
-      const index = state.items.findIndex(
-        contact => contact.id === payload.id
-      );
+
+      const index = state.items.findIndex(contact => contact.id === payload.id);
       state.items.splice(index, 1);
+      // state.items = state.items.filter(contact => contact.id !== payload)
     },
-    [deleteContact.rejected]: (state, {payload}) => {
+    [deleteContact.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
     },
   },
 });
-// export const { add, delet } = contactsSlice.actions; 
 
 export const filterSlice = createSlice({
   name: 'filter',

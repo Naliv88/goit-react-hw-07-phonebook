@@ -19,6 +19,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// https://63d4efda0e7ae91a00a4e682.mockapi.io/contacts

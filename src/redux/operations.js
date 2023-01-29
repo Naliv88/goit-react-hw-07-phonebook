@@ -1,17 +1,5 @@
 import axios from "axios";
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import * as phoneActions from "../redux/actions"
-
-// export const fetchContacts = () => async dispatch => {
-//     dispatch(phoneActions.fetchContactsRequest());
-//     try {
-//         const contacts = await axios.get("https://63d4efda0e7ae91a00a4e682.mockapi.io/contacts");
-//         dispatch(phoneActions.fetchContactsSuccess(contacts))
-    
-//     } catch (error) { 
-//         dispatch(phoneActions.fetchContactsError(error))
-//     }
-// }
 
 const axiosFetch = axios.create({baseURL: 'https://63d4efda0e7ae91a00a4e682.mockapi.io/contacts'})
 

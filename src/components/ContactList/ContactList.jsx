@@ -29,7 +29,7 @@ export const ContactList = () => {
           height="80"
           width="80"
           radius="48"
-          color="#292b29"
+          color="#0a0a23"
           ariaLabel="watch-loading"
           wrapperStyle={{}}
           wrapperClassName=""
